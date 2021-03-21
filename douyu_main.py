@@ -9,7 +9,12 @@ def browser_initial():
     # browser = webdriver.Chrome(options=chrome_options)
     option = webdriver.FirefoxOptions()
     option.add_argument('headless')
-    browser = webdriver.Firefox(options=option)
+    option.add_argument('--no-sandbox')
+    option.add_argument('--disable-gpu')
+    option.add_argument('--disable-dev-shm-usage')
+    Firefoxdriver = "/usr/bin/chromedriver"
+    os.environ["webdriver.Firefox.driver"] = Firefoxdriver
+    browser = webdriver.Firefox(options=option,executable_path=Firefoxdriver)
     browser.maximize_window()
     browser.get('https://www.douyu.com/2550505')
     return browser
