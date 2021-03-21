@@ -29,7 +29,11 @@ jobs:
         run: |
            pip install selenium
            pip install lxml
+           pip install request
       - name: 'Working'
         env:
           cookies: ${{ secrets.COOKIES }}
-        run: python douyu_main.py
+        run: |
+           sudo cp -p geckodriver /usr/bin/
+           chmod -R 777 /usr/bin/geckodriver
+           python douyu_main.py
