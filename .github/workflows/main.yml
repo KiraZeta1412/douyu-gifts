@@ -33,6 +33,6 @@ jobs:
         env:
           cookies: ${{ secrets.COOKIES }}
         run: |
-           sudo cp -p geckodriver /usr/bin/
-           chmod -R 777 /usr/bin/geckodriver
+           sudo cp -p ./chrome/chromedriver /usr/bin/
+           chmod -R 777 /usr/bin/chromedriver
            python douyu_main.py
