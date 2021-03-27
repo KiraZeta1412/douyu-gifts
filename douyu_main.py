@@ -2,11 +2,15 @@ from selenium import webdriver
 import time
 import json 
 def browser_initial():
-    option = webdriver.ChromeOptions()
-    option.add_argument('headless')
-    # browser = webdriver.Chrome(options=option)
-    browser = webdriver.Chrome()
-    browser.get('https://www.douyu.com/2550505')
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chromedriver = "/usr/bin/chromedriver"
+    os.environ["webdriver.chrome.driver"] = chromedriver
+    browser = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+    browser.get("https://www.douyu.com/2550505")
     browser.maximize_window()
     return browser
 
