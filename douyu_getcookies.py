@@ -9,7 +9,10 @@ if __name__ == '__main__':
     driver.get('https://www.douyu.com/')
     sleep(6)
     # driver.switch_to.frame(driver.find_element_by_xpath('//*[@id="anony-reg-new"]/div/div[1]/iframe'))  # 切换浏览器标签定位的作用域
-    driver.find_element_by_xpath('//*[@id="js-header"]/div/div/div[3]/div[7]/div/div/a/span').click()
+
+    webdriver.ActionChains(driver).move_to_element(driver.find_element_by_xpath('/html/body/div[1]/header/div/div/div/div[3]/div[7]/div/div/a/span')).click(driver.find_element_by_xpath('/html/body/div[1]/header/div/div/div/div[3]/div[7]/div/div/div/div/div/div[2]/a[1]')).perform()
+    
+
     sleep(10)
     dictCookies = driver.get_cookies()  # 获取list的cookies
     jsonCookies = json.dumps(dictCookies)  # 转换成字符串保存
