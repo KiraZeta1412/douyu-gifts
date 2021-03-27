@@ -17,7 +17,7 @@ def browser_initial():
 
 def log_csdn(browser):
     #输入你的cookies
-    mycookies = ('')
+    mycookies = os.environ["COOKIES"]
 
     listCookies = json.loads(mycookies)
 
