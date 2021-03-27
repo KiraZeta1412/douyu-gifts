@@ -18,4 +18,5 @@ if __name__ == '__main__':
     jsonCookies = json.dumps(dictCookies)  # 转换成字符串保存
     with open('mycookies.txt', 'w') as f:
         f.write(jsonCookies)
+    
     print('cookies保存成功！')
