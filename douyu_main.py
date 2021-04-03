@@ -47,8 +47,8 @@ if(browser.find_element_by_css_selector('.SuperFansGuideTips-close').is_displaye
     browser.find_element_by_css_selector('.SuperFansGuideTips-close').click()
 bag = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/span').click()
 browser.implicitly_wait(30)
-while(not(browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/div/div[3]/div/div[1]/ul[1]/li[1]').is_displayed())):
-    browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/span').click()
+
+browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/span').click()
 browser.implicitly_wait(30)
 #获取礼物数
 gift_str = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/div/div[3]/div/div[1]/ul[1]/li[1]/span').text
