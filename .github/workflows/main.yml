@@ -4,6 +4,9 @@ name: send_gift
 
 # Controls when the action will run. 
 on:
+   push:
+     branches: 
+       - main
    schedule:
     - cron: "25 12 * * *"  # scheduled at 20:25 (UTC+8) everyday
 jobs:
