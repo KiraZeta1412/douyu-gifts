@@ -45,18 +45,22 @@ browser.implicitly_wait(30)
 #点击背包
 if(browser.find_element_by_css_selector('.SuperFansGuideTips-close').is_displayed()):
     browser.find_element_by_css_selector('.SuperFansGuideTips-close').click()
-bag = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/span').click()
 browser.implicitly_wait(30)
-
-browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/span').click()
+bag = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[4]/div/div/span').click()
+time.sleep(1)
 browser.implicitly_wait(30)
+browser.refresh()
+browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[4]/div/div/span').click()
+browser.implicitly_wait(30)
+time.sleep(2)
 #获取礼物数
-gift_str = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/div/div[3]/div/div[1]/ul[1]/li[1]/span').text
+gift_str = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[4]/div/div/div/div[3]/div/div[1]/ul[1]/li[1]/span').text
 gift_num = int(gift_str)
 #点击礼物
 count = 0
 while(count<gift_num):
     browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div[1]/div[2]/div/div[2]/div/div[4]/div/div/div/div[3]/div/div[1]/ul[1]/li[1]').click()
+    browser.implicitly_wait(30)
     time.sleep(0.5)
     count += 1
 
