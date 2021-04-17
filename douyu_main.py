@@ -46,22 +46,23 @@ browser.implicitly_wait(30)
 if(browser.find_element_by_css_selector('.SuperFansGuideTips-close').is_displayed()):
     browser.find_element_by_css_selector('.SuperFansGuideTips-close').click()
 browser.implicitly_wait(30)
-bag = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[4]/div/div/span').click()
-time.sleep(1)
-browser.implicitly_wait(30)
-browser.refresh()
-browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[4]/div/div/span').click()
+bag = browser.find_element_by_css_selector('.PlayerToolbar-backpackArea').click()
 browser.implicitly_wait(30)
 time.sleep(2)
+browser.refresh()
+browser.find_element_by_css_selector('.PlayerToolbar-backpackArea').click()
+browser.implicitly_wait(30)
+
+time.sleep(5)
 #获取礼物数
-gift_str = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[4]/div/div/div/div[3]/div/div[1]/ul[1]/li[1]/span').text
+gift_str = browser.find_element_by_css_selector('.Backpack-propCount').text
 gift_num = int(gift_str)
 #点击礼物
 count = 0
 while(count<gift_num):
-    browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[4]/div/div/div/div[3]/div/div[1]/ul[1]/li[1]').click()
-    browser.implicitly_wait(30)
+    browser.find_element_by_css_selector('#js-player-toolbar > div > div:nth-child(2) > div > div.PlayerToolbar-ContentCell.is-full > div > div.PlayerToolbar-backpackArea > div > div > div > div:nth-child(3) > div > div.Backpack-propWrap > ul:nth-child(1) > li.Backpack-prop.prop.is-effect').click()
     time.sleep(0.5)
     count += 1
+
 time.sleep(5)
 browser.quit()
