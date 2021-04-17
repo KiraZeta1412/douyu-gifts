@@ -10,7 +10,7 @@ def browser_initial():
     chrome_options.add_argument('--disable-dev-shm-usage')
     chromedriver = "/usr/bin/chromedriver"
     os.environ["webdriver.chrome.driver"] = chromedriver
-    browser = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+    browser = webdriver.Chrome(options=chrome_options,executable_path=chromedriver)
     browser.get("https://www.douyu.com/2550505")
     browser.maximize_window()
     return browser
