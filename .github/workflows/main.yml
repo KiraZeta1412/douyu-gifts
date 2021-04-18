@@ -4,11 +4,11 @@ name: send_gift
 
 # Controls when the action will run. 
 on:
-   push:
-     branches: 
-       - main
+   #push:
+    # branches: 
+     #  - main
    schedule:
-    - cron: "25 12 * * *"  # scheduled at 20:25 (UTC+8) everyday
+    - cron: "25 01 * * *"  # scheduled at 20:25 (UTC+8) everyday
 jobs:
   # This workflow contains a single job called "build"
   build:
