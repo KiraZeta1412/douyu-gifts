@@ -8,7 +8,7 @@ on:
      branches: 
        - master
    schedule:
-    - cron: "25 12 * * *"  # scheduled at 20:25 (UTC+8) everyday
+    - cron: "55 18 * * *"  # scheduled at 20:25 (UTC+8) everyday
 jobs:
   # This workflow contains a single job called "build"
   build:
