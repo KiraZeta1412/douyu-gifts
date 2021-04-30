@@ -46,6 +46,7 @@ browser.implicitly_wait(30)
 if(browser.find_element_by_css_selector('.SuperFansGuideTips-close').is_displayed()):
     browser.find_element_by_css_selector('.SuperFansGuideTips-close').click()
 browser.implicitly_wait(30)
+time.sleep(5)
 bag = browser.find_element_by_css_selector('.PlayerToolbar-backpackArea').click()
 browser.implicitly_wait(30)
 time.sleep(2)
