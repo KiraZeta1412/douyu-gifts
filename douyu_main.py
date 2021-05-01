@@ -15,7 +15,7 @@ def browser_initial():
     browser.maximize_window()
     return browser
 
-def log_csdn(browser):
+def log_douyu(browser):
     #输入你的cookies
     mycookies = os.environ["cookies"]
 
@@ -38,14 +38,12 @@ def log_csdn(browser):
 
 if __name__ == "__main__":
     browser = browser_initial()
-    log_csdn(browser)
+    log_douyu(browser)
 
 browser.execute_script('window.scrollTo(0,500)')
 browser.implicitly_wait(30)
 #点击背包
-if(browser.find_element_by_css_selector('.SuperFansGuideTips-close').is_displayed()):
-    browser.find_element_by_css_selector('.SuperFansGuideTips-close').click()
-browser.implicitly_wait(30)
+
 time.sleep(5)
 bag = browser.find_element_by_css_selector('.PlayerToolbar-backpackArea').click()
 browser.implicitly_wait(30)
