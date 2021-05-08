@@ -45,6 +45,7 @@ browser.implicitly_wait(30)
 #点击背包
 
 time.sleep(5)
+browser.refresh()
 bag = browser.find_element_by_css_selector('.PlayerToolbar-backpackArea').click()
 browser.implicitly_wait(30)
 time.sleep(2)
