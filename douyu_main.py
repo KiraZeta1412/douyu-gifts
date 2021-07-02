@@ -50,6 +50,7 @@ bag = browser.find_element_by_css_selector('.PlayerToolbar-backpackArea').click(
 browser.implicitly_wait(30)
 time.sleep(2)
 browser.refresh()
+time.sleep(2)
 browser.find_element_by_css_selector('.PlayerToolbar-backpackArea').click()
 browser.implicitly_wait(30)
 
@@ -60,7 +61,7 @@ gift_num = int(gift_str)
 #点击礼物
 count = 0
 while(count<gift_num):
-    browser.find_element_by_css_selector('#js-player-toolbar > div > div:nth-child(2) > div > div.PlayerToolbar-ContentCell.is-full > div > div.PlayerToolbar-backpackArea > div > div > div > div:nth-child(3) > div > div.Backpack-propWrap > ul:nth-child(1) > li.Backpack-prop.prop.is-effect').click()
+    browser.find_element_by_css_selector('#js-player-toolbar > div > div:nth-child(2) > div > div.PlayerToolbar-ContentCell.is-full > div > div.PlayerToolbar-backpackArea > div > div > div > div.Backpack-content > div:nth-child(2) > div > div.Backpack-propWrap > ul:nth-child(1) > li.Backpack-prop.prop.is-effect').click()
     time.sleep(0.5)
     count += 1
 
