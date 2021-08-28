@@ -40,7 +40,7 @@ if __name__ == "__main__":
     browser = browser_initial()
     log_douyu(browser)
 
-browser.execute_script('window.scrollTo(0,400)')
+browser.execute_script('window.scrollTo(0,500)')
 browser.implicitly_wait(30)
 #点击背包
 
