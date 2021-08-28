@@ -56,9 +56,7 @@ browser.implicitly_wait(30)
 
 time.sleep(5)
 #获取礼物数
-browser.find_element_by_css_selector('.PlayerToolbar-backpackArea').click()
-tiem.sleep(1)
-gift_str = browser.find_element_by_css_selector('.Backpack-propCount').text
+gift_str = browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[5]/div/div/div/div[2]/div[2]/div/div[1]/ul[1]/li[1]/span').text
 gift_num = int(gift_str)
 #点击礼物
 count = 0
