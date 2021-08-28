@@ -61,7 +61,7 @@ gift_num = int(gift_str)
 #点击礼物
 count = 0
 while(count<gift_num):
-    browser.find_element_by_css_selector('#js-player-toolbar > div > div:nth-child(2) > div > div.PlayerToolbar-ContentCell.is-full > div > div.PlayerToolbar-backpackArea > div > div > div > div.Backpack-content > div:nth-child(2) > div > div.Backpack-propWrap > ul:nth-child(1) > li.Backpack-prop.prop.is-effect').click()
+    browser.find_element_by_xpath('//*[@id="js-player-toolbar"]/div/div[2]/div/div[2]/div/div[5]/div/div/div/div[2]/div[2]/div/div[1]/ul[1]/li[1]').click()
     time.sleep(0.5)
     count += 1
 
